@@ -35,14 +35,13 @@ RUN echo "ansible ALL=NOPASSWD: ALL" >> /etc/sudoers
 # host key
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 # EntryPoint
-ENTRYPOINT ["/sbin/init"]
 # SSH key
 RUN mkdir -m 700 /home/ansible/.ssh
 RUN chown -R ansible:ansible /home/ansible/.ssh/
 
-# RUN touch /home/ansible/.ssh/authorized_keys  \
-#   && chmod 600 /home/ansible/.ssh/authorized_keys \
-#   && chown ansible:ansible /home/ansible/.ssh/authorized_keys
+RUN touch /home/ansible/.ssh/authorized_keys  \
+  && chmod 600 /home/ansible/.ssh/authorized_keys \
+  && chown ansible:ansible /home/ansible/.ssh/authorized_keys
 
 # Open ssh port
 EXPOSE 22
