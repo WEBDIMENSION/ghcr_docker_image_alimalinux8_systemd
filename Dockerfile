@@ -40,9 +40,9 @@ ENTRYPOINT ["/sbin/init"]
 RUN mkdir -m 700 /home/ansible/.ssh
 RUN chown -R ansible:ansible /home/ansible/.ssh/
 
-RUN touch /home/ansible/.ssh/authorized_keys  \
-  && chmod 600 /home/ansible/.ssh/authorized_keys \
-  && chown ansible:ansible /home/ansible/.ssh/authorized_keys
+# RUN touch /home/ansible/.ssh/authorized_keys  \
+#   && chmod 600 /home/ansible/.ssh/authorized_keys \
+#   && chown ansible:ansible /home/ansible/.ssh/authorized_keys
 
 # Open ssh port
 EXPOSE 22
