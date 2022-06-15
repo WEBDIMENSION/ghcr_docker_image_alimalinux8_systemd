@@ -1,4 +1,4 @@
-FROM almalinux:8.5
+FROM almalinux/8-init
 RUN dnf -y update; dnf clean all
 RUN dnf -y install openssh-server passwd;
 RUN systemctl enable sshd
