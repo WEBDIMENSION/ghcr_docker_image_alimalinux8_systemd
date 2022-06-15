@@ -9,6 +9,7 @@ RUN dnf install -y \
   unzip \
   vim \
   git \
+  gcc \
   firewalld \
   cronie-noanacron \
   iproute \
